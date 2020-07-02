@@ -255,8 +255,6 @@ export default {
 
 Webhooks is a combination of elements that create a notification and reaction system within a larger integration.
 
-Webhooks are coded like a phone number that Stripe calls to notify you of any activity in your Stripe account, i.e. creation of a new customer, or a payout of funds to your bank account. The webhook endpoint is controlled by a person answering that call who takes action based upon the specific information it receives.
+Webhooks are coded like a phone number that Zippie calls to notify you of any activity in your Zippie account, i.e. creation of a new customer, or a payout of funds to your bank account. The webhook endpoint is controlled by a person answering that call who takes action based upon the specific information it receives.
 
-The webhook endpoint is just more code on your server, which can be written in Ruby, PHP, or Node.js. It also has an associated URL (e.g., https://example.com/webhooks). 
-
-The Stripe notifications are called Event objects. An Event object contains all details regarding any recent activity on your account, including the type of event and the data associated with the event. The webhook endpoint uses the event object's details to take any required action, such as indicating that an order should be fulfilled.
+The webhook endpoint is just more code on your server, which can be written in Ruby, PHP, or Node.js.

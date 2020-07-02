@@ -1,5 +1,6 @@
 // .vuepress/config.js
 module.exports = {
+    base: '/zippie-doc/',
     plugins: ['tabs'],
     description: 'Hello World!',
     head: [
