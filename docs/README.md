@@ -4,7 +4,17 @@ description: Zippie Pay API Documentation
 lang: en-US
 ---
 
+![Image of Yaktocat](/assets/images/zippie-icon.png)
+
+# Welcome to Zippie Pay Docs!
+> These docs will help you to quickly get up and running with the Zippie Pay API. The documentation includes information you need to know about the API as well as detailed examples to quickly get you going
+
 # Introduction
+Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+## Supported Currencies
+Currently, Zippie Pay only supports KSH and EUR currencies.
+
 
 ## Getting Started
 
