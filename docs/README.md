@@ -58,19 +58,25 @@ npm install @zippie/pay-button
 ::::
 
 ### Creating your forms
-```html
 
+
+
+:::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
+
+::: tab HTML id="html" 
+
+```html
 HTML:
 
 <input type="email" id="zippie_email">
 <input type="number" id="zippie_amount">
 <button onclick="onBuyClicked()">Submit</button>
 ```
+:::
 
 
-```vue
-VUE: 
-
+::: tab Vue id="vue"
+```HTML
 <template>
   <div class='container'>
     <form @submit.prevent='submitForm'>
@@ -92,6 +98,10 @@ export default {
 }
 </script>
 ```
+:::
+
+::::
+
 
 ### Configuring your forms
 ```javascript
