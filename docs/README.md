@@ -63,7 +63,7 @@ npm install @zippie/pay-button
 
 :::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
-::: tab HTML id="html" 
+::: tab HTML/CSS/JavaScript id="html" 
 
 ```html
 HTML:
@@ -104,7 +104,13 @@ export default {
 
 
 ### Configuring your forms
-```javascript
+
+:::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
+
+::: tab HTML/CSS/JavaScript id="HTML"
+
+```HTML
+<script>
 function onBuyClicked() {
   // Create a variable array with these parameters
   const paymentData = {
@@ -115,11 +121,14 @@ function onBuyClicked() {
     email: document.getElementById('zippie_email').value
   }
 }
+</script>
 ```
 
-```vue
-VUE
+:::
 
+::: tab Vue id="vue"
+
+```html
 <script>
 Import { PaymentRequest } from ‘@zippie/pay-button’
 
@@ -142,15 +151,19 @@ export default {
   }
 } 
 </script>
-
 ```
+:::
+
+::::
+
 ### Calling the API
 
 
 :::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
-::: tab HTML id="html" 
-```php
+::: tab HTML id="html"
+
+```Javascript
 function onBuyClicked() {
   // Create a variable array with these parameters
   const paymentData = {
