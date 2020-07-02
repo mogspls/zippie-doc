@@ -4,7 +4,7 @@ description: Zippie Pay API Documentation
 lang: en-US
 ---
 
-![Image of Yaktocat](/assets/images/zippie-icon.png)
+![Zippie Icon](/assets/images/zippie-icon.png)
 
 # Welcome to Zippie Pay Docs!
 
@@ -145,7 +145,12 @@ export default {
 
 ```
 ### Calling the API
-```javascript
+
+
+:::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
+
+::: tab HTML id="html" 
+```php
 function onBuyClicked() {
   // Create a variable array with these parameters
   const paymentData = {
@@ -172,10 +177,11 @@ function onBuyClicked() {
   }
 }
 ```
+:::
 
+
+::: tab Vue id="vue"
 ```vue
-VUE
-
 <script>
 Import { PaymentRequest } from ‘@zippie/pay-button’
 
@@ -210,3 +216,6 @@ export default {
 </script>
 
 ```
+:::
+
+::::
