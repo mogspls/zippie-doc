@@ -7,14 +7,18 @@ lang: en-US
 ![Image of Yaktocat](/assets/images/zippie-icon.png)
 
 # Welcome to Zippie Pay Docs!
-> These docs will help you to quickly get up and running with the Zippie Pay API. The documentation includes information you need to know about the API as well as detailed examples to quickly get you going
+
+These docs will help you to quickly get up and running with the Zippie Pay API. The documentation includes information you need to know about the API as well as detailed examples to quickly get you going
 
 # Introduction
 Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
 
 ## Supported Currencies
-Currently, Zippie Pay only supports KSH and EUR currencies.
 
+Zippie only currently supports 2 currencies at the moment.
+
+- Kenyan shillings (KSH)
+- Euros (EUR)
 
 ## Getting Started
 
@@ -34,17 +38,24 @@ You can set up the service in four steps:
 
 You can include the Zippie Pay API through the cdn or the npm: 
 
-```html
-CDN:
+:::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
-Version 1.0.2
+::: tab CDN id="cdn" 
+```PHP
+// CDN
 <script src="https://unpkg.com/@zippie/pay-button@1.0.2/dist/zippie-pay.js"></script>
 
-NPM:
-
-npm install @zippie/pay-button
-
 ```
+:::
+
+
+::: tab NPM id="npm"
+```bash
+npm install @zippie/pay-button
+```
+:::
+
+::::
 
 ### Creating your forms
 ```html
@@ -63,9 +74,9 @@ VUE:
 <template>
   <div class='container'>
     <form @submit.prevent='submitForm'>
-      <input type='email' v-model='zippie_email'>
-      <input type='number' v-model='zippie_amount'>
-      <input type='submit' value='submit'>Submit</button>	
+        <input type='email' v-model='zippie_email'>
+        <input type='number' v-model='zippie_amount'>
+        <button type='submit' value='submit'>Submit</button>	
     </form>
   </div>
 <template>
