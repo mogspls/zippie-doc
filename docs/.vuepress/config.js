@@ -10,9 +10,9 @@ module.exports = {
         logo: '/assets/images/logo.png',
         sidebar: 'auto',
          nav: [
-          { text: 'Home', link: '/' },
-          { text: 'Guide', link: '/guide/' },
-          { text: 'External', link: 'https://google.com' }
+            { text: 'Zippie.com', link: 'https://www.zippie.com' },
+            { text: 'Docs', link: '/' },
+            { text: 'Support', link: 'https://www.zippie.com/contact' },
         ]
     }
 }

@@ -6,12 +6,12 @@ lang: en-US
 
 ![Zippie Icon](/assets/images/zippie-icon.png)
 
-# Welcome to Zippie Pay Docs!
-
-These docs will help you to quickly get up and running with the Zippie Pay API. The documentation includes information you need to know about the API as well as detailed examples to quickly get you going
 
 # Introduction
-Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+
+* Welcome to the Zippie API Documentation *
+
+These docs will help you to quickly get up and running with the Zippie Pay API. The documentation includes information you need to know about the API as well as detailed examples to quickly get you going
 
 ## Supported Currencies
 
@@ -40,9 +40,10 @@ You can include the Zippie Pay API through the cdn or the npm:
 
 :::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
-::: tab CDN id="cdn" 
-```PHP
-// CDN
+::: tab CDN id="cdn"
+
+Include the CDN tag to your markup, preferably at the footer
+```HTML
 <script src="https://unpkg.com/@zippie/pay-button@1.0.2/dist/zippie-pay.js"></script>
 
 ```
@@ -63,9 +64,7 @@ npm install @zippie/pay-button
 
 ::: tab HTML/CSS/JavaScript id="html" 
 
-```html
-HTML:
-
+```HTML
 <input type="email" id="zippie_email">
 <input type="number" id="zippie_amount">
 <button onclick="onBuyClicked()">Submit</button>
@@ -252,7 +251,6 @@ export default {
 
 ::::
 
-
 ## Webhooks
 
 *Webhooks* refers to a combination of elements that collectively create a notification and reaction system within a larger integration.
@@ -272,6 +270,4 @@ Zippie uses webhooks to notify your application when an event happens in your ac
 3. Register the endpoint with Zippie to go live.
 
 **NOTE** *Not all Zippie integrations require webhooks. Keep reading to learn more about what webhooks are and when you should use them.*
-
-
 
