@@ -19,27 +19,163 @@ You can set up the service in four steps:
 3. [Configure Inputs](#)
 4. [Call API](#)
 
-### HTML
-#### CDN
 
-```HTML
+### Installation
+
+You can include the Zippie Pay API through the cdn or the npm: 
+
+```html
+CDN:
+
+Version 1.0.2
 <script src="https://unpkg.com/@zippie/pay-button@1.0.2/dist/zippie-pay.js"></script>
+
+NPM:
+
+npm install @zippie/pay-button
+
 ```
 
-#### Creating your form
+### Creating your forms
+```html
 
-Create your elements for collecting user's email and amount
+HTML:
 
-You're free to identify the elements by any means you want. In the example below we use an ID.
-
-```HTML
 <input type="email" id="zippie_email">
 <input type="number" id="zippie_amount">
 <button onclick="onBuyClicked()">Submit</button>
 ```
 
 
+```vue
+VUE: 
 
+<template>
+  <div class='container'>
+    <form @submit.prevent='submitForm'>
+      <input type='email' v-model='zippie_email'>
+      <input type='number' v-model='zippie_amount'>
+      <input type='submit' value='submit'>Submit</button>	
+    </form>
+  </div>
+<template>
 
+<script>
+export default {
+  data() {
+    return { 
+      zippie_email,
+      zippie_amount
+    }
+  },
+}
+</script>
+```
 
-### VueJS
+### Configuring your forms
+```javascript
+function onBuyClicked() {
+  // Create a variable array with these parameters
+  const paymentData = {
+    merchantId: 'YOUR.MERCHANT.ID',
+    orderId: 'YOUR_ORDER_ID', // or document.getElementById('zippie_email') if you don't have an orderId
+    amount: document.getElementById('zippie_amount').value,
+    currency: 'EUR' ,
+    email: document.getElementById('zippie_email').value
+  }
+}
+```
+
+```vue
+VUE
+
+<script>
+Import { PaymentRequest } from ‘@zippie/pay-button’
+
+export default {
+  data() {
+    return { 
+      zippie_email,
+      zippie_amount
+    }
+  },
+  methods: {
+    submitForm() {
+      const paymentData {
+        merchantId: 'test.merchant',
+        orderId: 'MY_ORDER_ID',
+        amount: 1,
+        currency: 'KSH',
+      }
+    }
+  }
+} 
+</script>
+
+```
+### Calling the API
+```javascript
+function onBuyClicked() {
+  // Create a variable array with these parameters
+  const paymentData = {
+    merchantId: 'YOUR.MERCHANT.ID',
+    orderId: 'YOUR_ORDER_ID', // or document.getElementById('zippie_email') if you don't have an orderId
+    amount: document.getElementById('zippie_amount').value,
+    currency: 'EUR' ,
+    email: document.getElementById('zippie_email').value
+  }
+
+  try {
+    // Create a variable that accesses the paymentRequest API, 
+    // and call in the variable you set
+    const request = zippie.paymentRequest(paymentData)  
+    request.show().then(function(result) {
+      // Payment successful
+      console.log('zippie.paymentRequest result', result)
+    }).catch(function(error) {
+      // Payment failed (e.g. cancel)
+      console.error('zippie.paymentRequest error', error)
+    })
+  } catch (error) {
+    console.error(error.message)
+  }
+}
+```
+
+```vue
+VUE
+
+<script>
+Import { PaymentRequest } from ‘@zippie/pay-button’
+
+export default {
+  data() {
+    return { 
+      zippie_email,
+      zippie_amount
+    }
+  },
+  methods: {
+    submitForm() {
+      const paymentData {
+        merchantId: 'test.merchant',
+        orderId: 'MY_ORDER_ID',
+        amount: 1,
+        currency: 'KSH',
+      }
+
+      const request = zippie.paymentRequest(paymentData)
+      Request.
+        .show()
+        .then(function (result) {
+          // Payment succesful
+       }) 
+      .catch(function (error) {
+        // Payment failed (e.g. cancel)
+      })
+    }
+  }
+} 
+</script>
+
+```
