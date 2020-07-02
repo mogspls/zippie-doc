@@ -253,21 +253,10 @@ export default {
 
 ## Webhooks
 
-*Webhooks* refers to a combination of elements that collectively create a notification and reaction system within a larger integration.
+Webhooks is a combination of elements that create a notification and reaction system within a larger integration.
 
-Metaphorically, webhooks are like a phone number that Zippie calls to notify you of activity in your Zippie account. The activity could be the creation of a new customer or the payout of funds to your bank account. The webhook endpoint is the person answering that call who takes actions based upon the specific information it receives.
+Webhooks are coded like a phone number that Stripe calls to notify you of any activity in your Stripe account, i.e. creation of a new customer, or a payout of funds to your bank account. The webhook endpoint is controlled by a person answering that call who takes action based upon the specific information it receives.
 
-Non-metaphorically, the webhook endpoint is just more code on your server, which could be written in Ruby, PHP, Node.js, or whatever. The webhook endpoint has an associated URL (e.g., https://example.com/webhooks). The Zippie notifications are Event objects. This Event object contains all the relevant information about what just happened, including the type of event and the data associated with that event. The webhook endpoint uses the event details to take any required actions, such as indicating that an order should be fulfilled.
+The webhook endpoint is just more code on your server, which can be written in Ruby, PHP, or Node.js. It also has an associated URL (e.g., https://example.com/webhooks). 
 
-### Receive event notifications with Webhooks
-
-Listen for events on your Zippie account so your integration can automatically trigger reactions.
-
-Zippie uses webhooks to notify your application when an event happens in your account. Webhooks are particularly useful for asynchronous events like when a customer's bank confirms a payment, a customer disputes a charge, or a recurring payment succeeds.
-
-1. Create a webhook endpoint on your server.
-2. Use the Zippie CLI to test that your endpoint works.
-3. Register the endpoint with Zippie to go live.
-
-**NOTE** *Not all Zippie integrations require webhooks. Keep reading to learn more about what webhooks are and when you should use them.*
-
+The Stripe notifications are called Event objects. An Event object contains all details regarding any recent activity on your account, including the type of event and the data associated with the event. The webhook endpoint uses the event object's details to take any required action, such as indicating that an order should be fulfilled.
