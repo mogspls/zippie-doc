@@ -59,8 +59,6 @@ npm install @zippie/pay-button
 
 ### Creating your forms
 
-
-
 :::: tabs cache-lifetime="10" :options="{ useUrlFragment: false }"
 
 ::: tab HTML/CSS/JavaScript id="html" 
@@ -109,6 +107,8 @@ export default {
 
 ::: tab HTML/CSS/JavaScript id="HTML"
 
+Create a function for the ``<button>`` element and then create a variable with the following inputs:
+
 ```HTML
 <script>
 function onBuyClicked() {
@@ -149,10 +149,29 @@ export default {
       }
     }
   }
-} 
+}
 </script>
 ```
 :::
+
+##### Parameters
+
+**merchantId** [string]
+
+Zippie will provide you a unique merchant ID which you insert here. If you don't have a merchantID yet, contact your Zippie support person.
+
+**orderId** [string]
+
+An Order ID is a unique number which you'll need to identify and track your orders. If you don't have an orderId, you may use the customer's email address.
+
+**amount** [string]
+
+You could enter any amount you wish.
+
+**email** [string]
+
+The customer's email. *(Please do not enter your own email, as this will be charged on you)*
+
 
 ::::
 
@@ -232,3 +251,27 @@ export default {
 :::
 
 ::::
+
+
+## Webhooks
+
+*Webhooks* refers to a combination of elements that collectively create a notification and reaction system within a larger integration.
+
+Metaphorically, webhooks are like a phone number that Zippie calls to notify you of activity in your Zippie account. The activity could be the creation of a new customer or the payout of funds to your bank account. The webhook endpoint is the person answering that call who takes actions based upon the specific information it receives.
+
+Non-metaphorically, the webhook endpoint is just more code on your server, which could be written in Ruby, PHP, Node.js, or whatever. The webhook endpoint has an associated URL (e.g., https://example.com/webhooks). The Zippie notifications are Event objects. This Event object contains all the relevant information about what just happened, including the type of event and the data associated with that event. The webhook endpoint uses the event details to take any required actions, such as indicating that an order should be fulfilled.
+
+### Receive event notifications with Webhooks
+
+Listen for events on your Zippie account so your integration can automatically trigger reactions.
+
+Zippie uses webhooks to notify your application when an event happens in your account. Webhooks are particularly useful for asynchronous events like when a customer's bank confirms a payment, a customer disputes a charge, or a recurring payment succeeds.
+
+1. Create a webhook endpoint on your server.
+2. Use the Zippie CLI to test that your endpoint works.
+3. Register the endpoint with Zippie to go live.
+
+**NOTE** *Not all Zippie integrations require webhooks. Keep reading to learn more about what webhooks are and when you should use them.*
+
+
+
